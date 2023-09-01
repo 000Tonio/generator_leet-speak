@@ -1,6 +1,8 @@
 import itertools
+import argparse
+import os
 
-def generate_leet_speak_combinations(word):
+def generate_all_leet_speak_combinations(word):
     leet_dict = {
         'a': ['a', '4', '@', 'á', 'à', 'â'],
         'b': ['b', '8', '6', '|3', '|8'],
@@ -68,9 +70,27 @@ def generate_leet_speak_combinations(word):
         '?': ['?'],
         '&': ['&'],
         ' ': [' '],  
-        '\n': ['\n'],  
-        
+        '\n': ['\n'],
+        'à': ['à'],
+        'â': ['â'],
+        'á': ['á'], 
+        'é': ['é'], 
+        'è': ['è'],
+    	'ê': ['ê'],
+    	'ë': ['ë'],
+    	'î': ['î'],
+	    'ï': ['ï'],
+	    'í': ['í'],
+        'ô': ['ô'],
+	    'ö': ['ö'],
+	    'ó': ['ó'],
+	    'û': ['û'],
+	    'ü': ['ü'],
+	    'ú': ['ú'],
+	    'ç': ['ç'],
+	    '¢': ['¢'],
     }
+
     # Générer des chiffres de 00 à 99
     digits = [str(i).zfill(2) for i in range(10)]
 
@@ -86,18 +106,19 @@ def generate_leet_speak_combinations(word):
 
     return final_combinations
 
-def process_text_file(input_file, output_file):
+def process_text_file(input_file):
     try:
-        with open(input_file, 'r') as file:
+        with open(input_file, 'r', encoding='utf-8') as file:
             text = file.read()
             words = text.split()
 
         converted_words = []
         for word in words:
-            combinations = generate_leet_speak_combinations(word)
+            combinations = generate_all_leet_speak_combinations(word)
             converted_words.extend(combinations)
 
-        with open(output_file, 'w') as file:
+        output_file = f"{os.path.splitext(input_file)[0]}-leet-speak.txt"
+        with open(output_file, 'w', encoding='utf-8') as file:
             file.write('\n'.join(converted_words))
 
         print(f"Toutes les combinaisons possibles ont été écrites dans '{output_file}'.")
@@ -107,10 +128,13 @@ def process_text_file(input_file, output_file):
         print(f"Une erreur s'est produite : {e}")
 
 def main():
-    input_file = input("Entrez le nom du fichier d'entrée : ")
-    output_file = input("Entrez le nom du fichier de sortie : ")
+    parser = argparse.ArgumentParser(description="Générateur de 'Leet Speak' avec Combinaisons de Chiffres")
+    parser.add_argument('input_file', help="Chemin du fichier d'entrée")
 
-    process_text_file(input_file, output_file)
+    args = parser.parse_args()
+    input_file = args.input_file
+
+    process_text_file(input_file)
 
 if __name__ == "__main__":
     main()
