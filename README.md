@@ -20,7 +20,7 @@ Le script générera toutes les combinaisons possibles et les écrira dans un fi
 
 ## Commande
 
-``python3 generator_leet-speak.py ~/Le/Chemin/De/Votre/Fichier.txt ``
+``python3 G-leet_speak.py ~/Le/Chemin/De/Votre/Fichier.txt ``
 
 ## Personnalisation :
 
