@@ -1,4 +1,4 @@
-Titre : Générateur de "Leet Speak" avec Combinaisons de Chiffres
+Générateur de "Leet Speak" avec Combinaisons de Chiffres
 
 Description :
 Ce script Python permet de générer des combinaisons de "Leet Speak" (un langage alternatif utilisant des caractères spéciaux et des chiffres pour remplacer les lettres) à partir d'un fichier texte en entrée. Il ajoute également des chiffres de 00 à 10 à la fin de chaque combinaison, créant ainsi une grande variété de variations pour chaque mot.
