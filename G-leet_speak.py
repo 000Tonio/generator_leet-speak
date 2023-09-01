@@ -91,7 +91,7 @@ def generate_all_leet_speak_combinations(word):
 	    '¢': ['¢'],
     }
 
-    # Générer des chiffres de 00 à 99
+    # Générer des chiffres de 00 à 10
     digits = [str(i).zfill(2) for i in range(10)]
 
     combinations = []
@@ -101,7 +101,7 @@ def generate_all_leet_speak_combinations(word):
     # Produire toutes les combinaisons possibles des caractères spéciaux pour chaque lettre
     all_combinations = [''.join(combination) for combination in itertools.product(*combinations)]
 
-    # Ajouter des chiffres de 00 à 99 à la fin de chaque combinaison
+    # Ajouter des chiffres de 00 à 10 à la fin de chaque combinaison
     final_combinations = [combination + digit for combination in all_combinations for digit in digits]
 
     return final_combinations
