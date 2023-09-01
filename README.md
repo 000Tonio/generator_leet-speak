@@ -15,8 +15,12 @@ Prend en charge une large gamme de caractères spéciaux et de chiffres couramme
 ## Utilisation :
 
 Téléchargez le script et assurez-vous d'avoir ``Python 3.x`` installé.
-Exécutez le script puis spécifier un fichier texte en entrée contenant les mots que vous souhaitez convertir.
-Le script générera toutes les combinaisons possibles et les écrira dans un fichier de sortie.
+Exécutez le script en spécifient un fichier texte en entrée contenant les mots que vous souhaitez convertir.
+Le script générera toutes les combinaisons possibles et les écrira dans un fichier de sortie qui aura le même nom que celui d'origine avec ``-leet-speak`` a la fin.
+
+## Commande
+
+``python3 generator_leet-speak.py ~/Le/Chemin/De/Votre/Fichier.txt ``
 
 ## Personnalisation :
 
